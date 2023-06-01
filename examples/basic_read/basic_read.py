@@ -1,8 +1,8 @@
 from gps import *
 import time
 
-gpsd = gps(mode=WATCH_ENABLE|WATCH_NEWSTYLE)
-print ('latitude\tlongitude\ttime utc\t\t\taltitude\tepv\tept\tspeed\tclimb')
+gpsd = gps(mode=WATCH_ENABLE|WATCH_NEWSTYLE) 
+print ('latitude\tlongitude\ttime utc\t\t\taltitude\tepv\tept\tspeed\tclimb') 
 
 try:
 
@@ -17,6 +17,7 @@ try:
             getattr(report,'ept','nan'),"\t",
             getattr(report,'speed','nan'),"\t",
             getattr(report,'climb','nan'),"\t")
-        time.sleep(1)
+        else:
+            time.sleep(1) 
 except (KeyboardInterrupt, SystemExit): #when you press ctrl+c
     print ("Done.\nExiting.")
